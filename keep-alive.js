@@ -2,7 +2,7 @@
 // Run this locally or on another free service to ping your Render app
 import https from "https";
 
-const APP_URL = "https://url-shortener-project-q3mz.onrender.com/"; // Replace with your actual URL
+const APP_URL = "https://url-shortener-project-q3mz.onrender.com"; // Replace with your actual URL
 
 function pingApp() {
   console.log(`Pinging ${APP_URL} at ${new Date().toISOString()}`);
