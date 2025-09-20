@@ -3,10 +3,11 @@ import shortid from "shortid";
 export const shortUrl = async (req, res) => {
   const { longUrl } = req.body;
   const shortCode = shortid.generate();
+
   const shortUrl = `${
     process.env.BASE_URL ||
-    "https://url-shortener-project-q3mz.onrender.com/"
-  }/${shortCode}`;
+    `https://url-shortener-project-q3mz.onrender.com/${shortCode}`
+  }`;
 
   // save to database
   const newUrl = new Url({
