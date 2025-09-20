@@ -4,7 +4,8 @@ export const shortUrl = async (req, res) => {
   const { longUrl } = req.body;
   const shortCode = shortid.generate();
   const shortUrl = `${
-    process.env.BASE_URL || "http://localhost:4000"
+    process.env.BASE_URL ||
+    "https://url-shortener-project-q3mz.onrender.com/"
   }/${shortCode}`;
 
   // save to database
