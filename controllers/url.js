@@ -1,4 +1,4 @@
-import { Url } from "../models/Url.js";
+import { Url } from "../models/url.js";
 import shortid from "shortid";
 export const shortUrl = async (req, res) => {
   const { longUrl } = req.body;
