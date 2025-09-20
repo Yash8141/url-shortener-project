@@ -1,14 +1,15 @@
 import { Url } from "../models/url.js";
 import shortid from "shortid";
+
 export const shortUrl = async (req, res) => {
   const { longUrl } = req.body;
   const shortCode = shortid.generate();
 
-  const shortUrl = `${
-    process.env.BASE_URL ||
-    `https://url-shortener-project-q3mz.onrender.com/${shortCode}`
-  }`;
+  // Dynamic base URL - works for both local and production
+  const baseUrl = process.env.BASE_URL || "http://localhost:3000";
+  const shortUrl = `${baseUrl}/${shortCode}`;
 
+  console.log("shortURL", shortUrl);
   // save to database
   const newUrl = new Url({
     shortCode,
